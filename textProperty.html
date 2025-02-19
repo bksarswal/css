@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> CSS Text Properties </h1> 
+    <pre>
+<h2>1. color</h2>
+Sets the color of the text.
+Can use named colors, HEX, RGB, or HSL values.
+p {
+  color: red; /* Named color */
+  color: #ff5733; /* HEX */
+  color: rgb(255, 87, 51); /* RGB */
+  color: hsl(12, 100%, 50%); /* HSL */
+}
+<h2>2. font-size</h2>
+Defines the size of the text.
+Units: px, em, rem, %, vw, vh.
+h1 {
+  font-size: 24px; /* Absolute size */
+  font-size: 1.5em; /* Relative to parent */
+  font-size: 150%; /* Percentage */
+}
+<h2>3. text-align</h2>
+Aligns text horizontally.
+Possible values: left, right, center, justify.
+div {
+  text-align: center; /* Centers text */
+}
+<h2>4. line-height</h2>
+Controls the space between lines of text.
+Can use a unit (px, %) or a multiplier (e.g., 1.5).
+p {
+  line-height: 1.8; /* 1.8 times the font size */
+  line-height: 30px; /* Fixed height */
+}
+<h2>5. letter-spacing</h2>
+Adjusts the space between characters.
+Positive values increase space; negative values decrease it.
+h2 {
+  letter-spacing: 2px; /* Widens space */
+  letter-spacing: -1px; /* Narrows space */
+}
+<h2>6. font-family</h2>
+Specifies the font type for the text.
+Always include a fallback font to ensure compatibility.
+Example font stacks:
+font-family: "Arial", sans-serif;
+font-family: "Georgia", serif;
+body {
+  font-family: "Roboto", "Arial", sans-serif; /* Primary and fallback fonts */
+}
+<h1>Combining Text Properties Example</h1>
+
+h1 {
+  color: navy;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-family: "Times New Roman", serif;
+}
+</pre>
+</body>
+</html>

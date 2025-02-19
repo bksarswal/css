@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-size: 16px; /* Root size for rem */
+        }
+        .fixed {
+          font-size: 20px; /* Fixed size */
+        }
+        .relative-em {
+          font-size: 2em; /* 2 times the parent's size */
+        }
+        .relative-rem {
+          font-size: 1.5rem; /* 1.5 times the root size (16px × 1.5 = 24px) */
+        }
+        .percentage {
+          font-size: 150%; /* 1.5 times the parent's size */
+        }
+        .viewport {
+          font-size: 5vw; /* 5% of the screen width */
+        }
+      </style>
+    </head>
+    <body>
+      <h1 class="fixed">Fixed size (20px)</h1>
+      <h1 class="relative-em">Relative to Parent (2em)</h1>
+      <h1 class="relative-rem">Relative to Root (1.5rem)</h1>
+      <h1 class="percentage">Percentage (150%)</h1>
+      <h1 class="viewport">Viewport (5vw)</h1>
+
+<pre>
+    <h1>What is font-size?</h1>
+The font-size property controls how big or small the text appears on the screen.
+ we can define the size using different types of units.
+
+<h1>Units in font-size</h1>
+<h2>px (Pixels):</h2>
+A fixed size that doesn't change with the size of the screen or other elements.
+h1 {
+  font-size: 20px; /* Always 20 pixels, no matter what */
+}
+<h2>em (Relative to Parent):</h2>
+The size is based on the font size of the element's parent.
+div {
+  font-size: 16px; /* Parent font size */
+}
+
+div p {
+  font-size: 2em; /* 2 times the parent size: 16px × 2 = 32px */
+
+}
+<h2>rem (Relative to Root):</h2>
+The size is based on the font size of the root element (usually <html>).
+Example:
+html {
+  font-size: 16px; /* Root font size */
+}
+p {
+  font-size: 1.5rem; /* 1.5 × 16px = 24px */
+}
+<h2>% (Percentage of Parent):</h2>
+The size is a percentage of the font size of the parent.
+Example:
+div {
+  font-size: 20px; /* Parent size */
+}
+div span {
+  font-size: 150%; /* 150% of 20px = 30px */
+}
+<h2>vw and vh (Viewport Width and Height):</h2>
+vw: Based on the width of the screen.
+1vw = 1% of the screen width.
+vh: Based on the height of the screen.
+1vh = 1% of the screen height.
+Example:
+h1 {
+  font-size: 5vw; /* 5% of the screen's width */
+}
+<h1>How It Works</h1>
+px: Always the same size (e.g., 20px stays 20 pixels everywhere).
+em: Gets bigger or smaller based on its parent element's size.
+rem: Consistent scaling based on the root size (html).
+%: Proportional to its parent’s size.
+vw/vh:Changes depending on the screen size.
+
+</pre>
+
+</body>
+</html>

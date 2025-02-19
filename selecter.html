@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>*{
+    box-sizing:border-box;
+  }
+  
+
+  p::first-letter{
+    font-weight: 700;
+    font-size: x-large;
+  }
+  p:hover{
+    color: red;
+  }
+  div >p{
+
+    color: blue;
+  }
+  
+    </style>
+</head>
+<body>
+
+ 
+ 
+<h1>Selectors and Specificity:</h1>
+<pre>
+Selectors and Specificity in CSS
+are fundamental concepts in CSS that determine how styles are applied to HTML elements. 
+<h1>Selectors</h1>
+Selectors are patterns used to target specific elements in the DOM for styling.
+<h1>Types of Selectors</h1>
+<h2>Universal Selector (*): </h2>Targets all elements.
+* {
+  margin: 0;
+}
+
+<h2>Type Selector</h2>: Targets all elements of a specific type (e.g., div, p).
+p {
+  color: blue;
+}
+<h2>Class Selector  (.classname) :</h2>  Targets elements with a specific class.
+.highlight {
+  background-color: yellow;
+}
+<h2>ID Selector (#id):</h2> Targets an element with a specific ID.
+#header {
+  font-size: 24px;
+}
+<h2>Attribute Selector:</h2> Targets elements based on their attributes.
+input[type="text"] {
+  border: 1px solid gray;
+}
+<h2>Group Selector: </h2>Targets multiple selectors at once, separated by commas.
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+<h2>Pseudo-classes:</h2> Targets elements based on their state.
+a:hover {
+  color: red;
+} 
+<h2>Pseudo-elements: </h2> Targets specific parts of an element.
+p::first-line {
+  font-weight: bold;
+}
+<h2>Combinators: </h2> Define relationships between elements:
+<h2>Descendant ( ):</h2> Targets all descendants.
+div p {
+  color: green;
+}
+<h2>Child (>):</h2> Targets direct children.
+div > p {
+  margin: 10px;
+}
+<h2>Adjacent Sibling (+):</h2> Targets the next sibling.
+
+h1 + p {
+  color: gray;
+}
+<h2>General Sibling (~): </h2>Targets all siblings.
+
+h1 ~ p {
+  font-style: italic;
+}
+
+<h1>Specificity</h1>
+Specificity determines which CSS rule is applied when multiple rules match the same element. 
+It is calculated based on the types of selectors in a rule.
+<h2>Specificity Calculation</h2>
+Inline Styles: Add 1000 (e.g., style="color: red;").
+ID Selectors: Add 100 for each #id.
+Class, Attribute, and Pseudo-class Selectors: Add 10 for each (e.g., .class, [attr=value], :hover).
+Type and Pseudo-element Selectors: Add 1 for each (e.g., div, p::before).
+Universal Selector (*): Adds 0 and has no specificity weight.
+Example Calculation
+Avoid Inline Styles and !important: Use them only when absolutely necessary to maintain clean and manageable CSS.
+
+</pre>
+
+</body>
+</html>

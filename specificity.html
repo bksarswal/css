@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>What is Specificity?</h1>
+    <pre>
+        Specificity is a scoring system used by browsers to determine which CSS rule is applied when multiple rules target the same element.
+        Each type of selector contributes a specific "weight" to the specificity score.
+       <h2> Specificity Calculation</h2>
+        Specificity is calculated based on a three-tier system, often represented as (a, b, c):
+        
+        <h2>a (Inline styles):</h2> Counts inline styles applied directly to an element (style="...").
+        Example: <div> adds 1,000.
+       <h2> b (ID selectors): </h2> Counts the number of id selectors.
+        Example: #header adds 100.
+        <h2>c (Class, attribute, pseudo-class selectors):</h2> Counts the number of these selectors.
+        Examples:
+        .nav-item (class selector) adds 10.
+        [type="text"] (attribute selector) adds 10.
+        :hover (pseudo-class selector) adds 10.
+        Type and pseudo-element selectors: Adds 1 for each element or pseudo-element selector.
+        Examples:
+        div adds 1.
+        ::before adds 1.
+        The universal selector (*) adds 0 points to specificity.
+        
+        Example: Why does #header have a specificity of 100?
+        Selector: #header
+        Inline styles (a): There are no inline styles here, so a = 0.
+        ID selectors (b): There is 1 ID selector (#header), so b = 1.
+        Class/attribute/pseudo-class selectors (c): There are no classes, attributes, or pseudo-classes, so c = 0.
+        Specificity = (a, b, c) = (0, 1, 0) = 100
+        
+        Compare to Other Selectors
+        Example 1: .nav-item
+        This is a class selector.
+        a = 0 (no inline styles), b = 0 (no IDs), c = 1 (1 class).
+        Specificity = (0, 0, 1) = 10
+        Example 2: div
+        This is a type selector.
+        a = 0, b = 0, c = 0, d = 1 (1 type selector).
+        Specificity = (0, 0, 0, 1) = 1
+        What Happens When Selectors Target the Same Element?
+        The browser uses the rule with the highest specificity.
+      
+           <h2> If the HTML is:</h2>
+        <div id="header" class="nav-item">Hello!</div>
+        div has a specificity of 1.
+        .nav-item has a specificity of 10.
+        #header has a specificity of 100.
+        Result: The #header rule wins because it has the highest specificity (100).
+        
+       <h1> Key Takeaways</h1>
+        Specificity is a score calculated from the type of selectors used in a CSS rule.
+        ID selectors (#) are stronger than class selectors (.), which are stronger than type selectors.
+        Inline styles always override everything, unless another rule uses !important.</pre>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <div id="box">HI</div>
+ <h1>Box MODEl</h1>
+ <pre style="font-family: Verdana, Geneva, Tahoma, sans-serif ; font: size 16px;">
+ The CSS Box Model is a fundamental concept that describes how the size of elements in a webpage is calculated. It consists of four key components: content, padding, border, and margin.
+
+ Components of the Box Model
+
+ Content
+
+This is the actual content of the element (e.g., text, images, etc.).
+The width and height specified for an element apply to this area by default.
+
+Padding
+
+The space between the content and the border.
+It creates "breathing room" inside the element.
+Example: padding: 10px;
+
+Border
+Surrounds the padding (if any) and the content.
+Example: border: 2px solid black;
+Margin
+
+The space between the element's border and adjacent elements.
+Example: margin: 20px;
+Visualization of the Box Model
+diff
+Copy code
++---------------------------+
+|        Margin             |
++---------------------------+
+|        Border             |
++---------------------------+
+|        Padding            |
++---------------------------+
+|        Content            |
++---------------------------+
+Box-Sizing Property
+The box-sizing property determines whether the dimensions of an element include padding and border or not.
+
+content-box (Default)
+
+The width and height only include the content. Padding and border are added outside the specified dimensions.
+Example:
+css
+Copy code
+div {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 5px solid black;
+}
+Total width = 200px + 10px (padding left) + 10px (padding right) + 5px (border left) + 5px (border right) = 230px.
+border-box
+
+The width and height include the content, padding, and border.
+Example:
+css
+Copy code
+div {
+  box-sizing: border-box;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 5px solid black;
+}
+Total width = 200px (content + padding + border are adjusted to fit).
+Practical Example
+HTML:
+
+html
+Copy code
+<div class="box content-box">Content-Box</div>
+<div class="box border-box">Border-Box</div>
+CSS:
+
+css
+Copy code
+body {
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+  border: 5px solid black;
+}
+
+.content-box {
+  box-sizing: content-box;
+  background-color: lightblue;
+}
+
+.border-box {
+  box-sizing: border-box;
+  background-color: lightgreen;
+}
+Output
+The content-box element will have an actual size larger than 200px x 100px because padding and border are added outside.
+The border-box element will have an exact size of 200px x 100px, with padding and border included.
+
+     </pre>
+</body>
+</html>

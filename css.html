@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <h1> CSS interview questions with their answers:</h1>
+
+<h2>Basic Level</h2>
+<h3>1. What is CSS, and why is it used?</h3>
+CSS (Cascading Style Sheets) is a stylesheet language used to control 
+    the presentation of HTML documents, including layout, colors, fonts, 
+    and spacing. It separates content from design, improving website
+     maintainability
+
+<h3>2. What are the different types of CSS?</h3>
+
+Inline CSS: Applied directly to an HTML element using the style attribute.
+    Internal CSS: Defined in the <.style> tag within the <.head> section of 
+        the document.
+    External CSS: Written in a separate file with a .css extension 
+    and linked via <.link>
+
+        <h3>3. What is the difference between id and class selectors?</h3>
+
+id: Unique identifier used for a single element, defined with #.
+    css
+    Copy code
+    #header {.
+      color: blue;
+    }
+    class: Can be used for multiple elements, defined with ..
+    css
+    Copy code
+    .btn {
+      background-color: green;
+    }</pre>
+<h1>Intermediate Level</h1>
+
+<h2>1. How does the CSS box model work?</h2>
+The CSS box model consists of the following components:
+
+    Content: The actual content of the box (text, image, etc.).
+    Padding: Space between content and border.
+    Border: Surrounds the padding.
+    Margin: Space outside the border
+<h2>2. Explain visibility: hidden vs. display: none.</h2>
+visibility: hidden: Hides the element but still occupies space in the layout.
+    display: none: Hides the element and removes it from the layout
+
+    <h2>3. What are media queries? Provide an example.</h2>
+Media queries are used to apply CSS styles based on device properties 
+    like width, height, or resolution.
+    
+    css
+    Copy code
+    @media (max-width: 768px) {
+      body {
+        background-color: lightblue;
+      }
+    }</pre>
+
+    <h2>4. What is the difference between inline, block, and inline-block elements?</h2>
+
+inline: Does not start on a new line; width/height cannot be set.
+    block: Starts on a new line; width/height can be set.
+    inline-block: Behaves like inline but allows width/height to be set
+
+    <h1>Advanced Level</h1>
+
+    <h2>1. What are CSS Grid and Flexbox? When should you use each?</h2>
+
+Flexbox: Best for one-dimensional layouts (row or column).
+    Example of Flexbox:
+    
+    css
+    Copy code
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    CSS Grid: Designed for two-dimensional layouts (rows and columns).
+    Example of Grid:
+    
+    css
+    Copy code
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }</pre>
+<h2>2. How does z-index work in CSS?</h2>
+The z-index property specifies the stack order of elements.
+    Higher values are displayed in front. It works only for elements
+     with a position other than static.
+   
+   css
+   Copy code
+   div {
+     position: relative;
+     z-index: 10;
+   }</pre>
+<h2>3. What are CSS variables? How are they used?</h2>
+CSS variables (custom properties) allow reusability of values.
+
+    css
+    Copy code
+    :root {
+      --main-color: #3498db;
+    }
+    button {
+      background-color: var(--main-color);
+    }</pre>
+
+    <h1>Practical Questions</h1>
+<h2>1. How would you create a responsive design without a framework?</h2>
+
+Use media queries for responsiveness.
+    Use percentages or relative units like em, rem, and vh/vw.
+    Apply Flexbox or Grid for layout adjustments.
+    Example:
+    
+    css
+    Copy code
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }</pre>
+
+
+  <h1>  Why Use box-sizing: border-box?</h1>
+    Simplifies Layouts:
+  
+    When using border-box, the element's specified width and height remain the same regardless 
+    of padding or border. This makes layouts more predictable and easier to manage.
+    Responsive Design:
+    
+    border-box is especially useful in responsive design. It ensures that elements stay within
+     their allocated size, even when padding or borders are added.
+    Avoids Calculation Errors:
+    
+    With content-box, you need to manually calculate the total size of an element by adding 
+    padding and borders. Using border-box eliminates this need.
+    Modern Best Practice:
+    
+    Most developers use box-sizing: border-box as a universal setting because it aligns with
+     how people generally think about element dimensions (width includes everything).   
+
+    <h1>Why Use content-box?</h1>
+    Precise Content Dimensions:
+    
+    content-box ensures that the width and height apply strictly to the content of the element, 
+    without considering padding or borders. This is useful for scenarios where the exact content 
+    dimensions are critical, such as:
+    Designing elements that need to fit into specific containers without additional adjustments.
+    Calculating space for dynamic content that relies on a fixed content size.
+
+<h1> When Should You Use content-box?  </h1>                                                                               
+    
+    Image or Video Containers:
+     To maintain consistent rendering when padding or borders are added around media, such as images or videos, without affecting the core dimensions.
+
+
+<h1>1. What is the difference between id and class selectors in terms of specificity?</h1>
+Specificity of id:
+
+An id selector contributes 100 points to specificity.
+Example: #header has a specificity of 100.
+Specificity of class:
+
+A class selector contributes 10 points to specificity.
+Example: .nav-item has a specificity of 10.
+Key Difference:
+
+id selectors have higher specificity than class selectors, so styles applied using an id will always override styles applied using a class, assuming they target the same element.
+<h1>2. How does the !important declaration affect specificity?</h1>
+The !important declaration overrides all other rules, regardless of specificity.
+
+It is applied last in the cascade, even if the rule with !important has lower specificity.
+
+Example:
+
+css
+Copy code
+p {
+  color: blue !important;
+}
+
+#paragraph {
+  color: red;
+}
+The text will be blue, because !important overrides the id selector.
+Note: Overusing !important can lead to messy and hard-to-maintain styles. It should be used sparingly.
+
+<h1>3. How do pseudo-classes like :hover differ from pseudo-elements like ::before?</h1>
+Pseudo-classes (:hover):
+
+Represent a state of an element.
+Do not create new content but apply styles based on interaction or conditions.
+Example:
+css
+Copy code
+a:hover {
+  color: red;
+}
+This changes the color of a link when hovered.
+Pseudo-elements (::before, ::after):
+
+Allow you to style specific parts of an element or add generated content.
+Create new content in the DOM that can be styled.
+Example:
+css
+Copy code
+p::before {
+  content: "Note: ";
+  color: gray;
+}
+This adds the word "Note:" before the content of every paragraph.
+<h1>4. What happens if two rules with the same specificity conflict?</h1>
+If two rules have the same specificity, the rule defined later in the stylesheet or cascade wins.
+Example:
+css
+Copy code
+p {
+  color: blue;
+}
+
+p {
+  color: green;
+}
+The text will be green because the second rule is defined later.
+<h1>5. How does the universal selector (*) affect specificity?</h1>
+The universal selector (*) has no specificity weight (it contributes 0 points).
+It is overridden by all other types of selectors.
+Example:
+css
+Copy code
+* {
+  color: black;
+}
+
+p {
+  color: red;
+}
+The paragraph text will be red because the p selector has higher specificity.
+
+</body>
+</html>
